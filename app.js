@@ -3,7 +3,12 @@ const app = express();
 const chalk = require('chalk');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks')
+const routes = require('./routes');
 
+
+app.use(express.static('./public/'))
+
+app.use('/', routes);
 
 // app.use(function(req, res, next){
 // 	res.send('<h1>main page</h1>');
@@ -19,24 +24,12 @@ app.use('/', function(req, res, next){
 	next();
 });
 
-var locals = {
-    title: 'An Example',
-    people: [
-        { name: 'Gandalf'},
-        { name: 'Frodo' },
-        { name: 'Hermione'}
-    ]
-};
-nunjucks.configure('views', {noCache: true});
-nunjucks.render('index.html', locals, function (err, output) {
-    console.log(output);
-});
 
 app.set('view engine', 'html'); // hace que res.render funcione con archivos html
 app.engine('html', nunjucks.render); // cuando le den archivos html a res.render, va a usar nunjucks
 nunjucks.configure('views', { noCache: true }) // apunta a nunjucks al directorio correcto para los templates
 
 
-console.log(chalk.blue('Hello World'))
+// console.log(chalk.blue('Hello World'))
 
 app.listen(3000);
