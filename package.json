@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "Numa Pigretti",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
     "express": "^4.16.3",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nunjucks": "^3.1.3"
   }
 }
