@@ -32,6 +32,7 @@ body {
   margin: 20px 0;
 }
 
+
 #footer > .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -41,9 +42,21 @@ code {
   font-size: 80%;
 }
 
+
+
+.photo {
+  height: 50px;
+  margin: 10px;
+}
+
+li{
+  list-style-type: none;
+}
+
 .tweetbox {
   padding: 7px;
 }
+
 
 .tweetbox img {
   float: left;
